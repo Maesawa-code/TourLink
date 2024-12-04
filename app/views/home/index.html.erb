@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TourLink</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "home", media: "all" %>
+  </head>
+
+  <body>
+  <h1>TourLink</h1>
+  <div class="button-container">
+    <%= link_to 'ログイン', new_user_session_path, class: 'button' %>
+    <%= link_to 'アカウント作成', new_user_registration_path, class: 'button' %>
+  </div>
+</body>
+
+</html>
