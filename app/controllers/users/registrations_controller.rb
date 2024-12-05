@@ -1,9 +1,18 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :configure_sign_up_params, only: [:create]
+  def create
+    @user = User.new(sign_up_params)
 
-  protected
+    if @user.save
+      redirect_to root_path
+    else
+     
+      render :new, status: :unprocessable_entity
+    end
+  end
 
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :profile_image, :gender_id, :age_group_id])
+  private
+
+  def sign_up_params
+    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :gender_id, :age_group_id, :profile_image)
   end
 end

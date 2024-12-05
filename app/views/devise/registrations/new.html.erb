@@ -1,29 +1,80 @@
-<h2>Sign up</h2>
+<%= form_with model: @user, url: user_registration_path, local: true, class: "account-form" do |f| %>
+  <div class="form-wrap">
+    <div class="form-header-text">
+      アカウントを作成
+    </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <!-- 名前 -->
+    <div class="field">
+      <%= f.label :nickname, "名前を入力してください", class: "form-text" %>
+      <%= f.text_field :nickname, class: "form-input", id: "nickname" %>
+      <% if @user.errors[:nickname].present? %>
+        <span class="error-text"><%= @user.errors[:nickname].first %></span>
+      <% end %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <!-- メールアドレス -->
+    <div class="field">
+      <%= f.label :email, "メールアドレスを入力してください", class: "form-text" %>
+      <%= f.email_field :email, class: "form-input", id: "email" %>
+      <% if @user.errors[:email].present? %>
+        <span class="error-text"><%= @user.errors[:email].first %></span>
+      <% end %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <!-- 性別 -->
+    <div class="field">
+      <%= f.label :gender_id, "性別を選択してください", class: "form-text" %>
+      <%= f.collection_select :gender_id, Gender.all, :id, :name, { prompt: "--選択してください--" }, { class: "form-input select-box" } %>
+      <% if @user.errors[:gender_id].present? %>
+        <span class="error-text"><%= @user.errors[:gender_id].first %></span>
+      <% end %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <!-- 年齢 -->
+    <div class="field">
+      <%= f.label :age_group_id, "年齢を選択してください", class: "form-text" %>
+      <%= f.collection_select :age_group_id, AgeGroup.all, :id, :name, { prompt: "--選択してください--" }, { class: "form-input select-box" } %>
+      <% if @user.errors[:age_group_id].present? %>
+        <span class="error-text"><%= @user.errors[:age_group_id].first %></span>
+      <% end %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+    <!-- パスワード -->
+    <div class="field">
+      <%= f.label :password, "パスワードを入力してください", class: "form-text" %>
+      <%= f.password_field :password, class: "form-input", id: "password" %>
+      <% if @user.errors[:password].present? %>
+        <span class="error-text"><%= @user.errors[:password].first %></span>
+      <% end %>
+    </div>
+
+    <!-- 確認用パスワード -->
+    <div class="field">
+      <%= f.label :password_confirmation, "確認用パスワードを入力してください", class: "form-text" %>
+      <%= f.password_field :password_confirmation, class: "form-input", id: "password-confirmation" %>
+      <% if @user.errors[:password_confirmation].present? %>
+        <span class="error-text"><%= @user.errors[:password_confirmation].first %></span>
+      <% end %>
+    </div>
+
+    <!-- プロフィール画像 -->
+    <div class="field">
+      <%= f.label :profile_image, "プロフィール画像を選択してください", class: "form-text" %>
+      <%= f.file_field :profile_image, class: "form-input", id: "profile-image" %>
+      <% if @user.errors[:profile_image].present? %>
+        <span class="error-text"><%= @user.errors[:profile_image].first %></span>
+      <% end %>
+    </div>
+    
+    <!-- 提出ボタン -->
+    <div class="actions">
+      <%= f.submit "アカウントを作成する", class: "submit-button" %>
+    </div>
+
+    <!-- ログインリンク -->
+    <div class="login-link-container">
+      <%= link_to "既にアカウントをお持ちの方はこちら", new_user_session_path, class: "login-link" %>
+    </div>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>

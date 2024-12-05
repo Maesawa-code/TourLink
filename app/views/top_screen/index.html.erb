@@ -4,7 +4,7 @@
     <title>TourLink</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "home", media: "all" %>
+    <%= stylesheet_link_tag "top_screen", media: "all" %>
   </head>
 
   <body>
@@ -12,7 +12,13 @@
   <div class="button-container">
     <%= link_to 'ログイン', new_user_session_path, class: 'button' %>
     <%= link_to 'アカウント作成', new_user_registration_path, class: 'button' %>
-  </div>
+
+
+<% if user_signed_in? %>
+    <p>ようこそ、<%= current_user.nickname %> さん</p> <!-- ログイン中のユーザー名表示 -->
+    <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "logout-button" %>
+  <% end %>
+
 </body>
 
 </html>
