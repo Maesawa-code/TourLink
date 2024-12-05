@@ -1,0 +1,41 @@
+<%= form_with model: @user, url: user_session_path, class: 'login-form', local: true do |f| %>
+  <div class="form-wrap">
+    <div class="form-header-text">
+      ログイン
+    </div>
+
+    <% if flash[:alert].present? %>
+      <div class="error-text">
+        <p><%= flash[:alert] %></p>
+      </div>
+    <% end %>
+
+    <!-- メールアドレス -->
+    <div class="form-group">
+        <label for="email" class="form-label">メールアドレス</label>
+      <%= f.email_field :email, class: "form-input", id: "email" %>
+      <% if @user.errors[:email].present? %>
+        <span class="error-text"><%= @user.errors[:email].first %></span>
+      <% end %>
+    </div>
+
+    <!-- パスワード -->
+    <div class="form-group">
+        <label for="password" class="form-label">パスワード</label>
+      <%= f.password_field :password, class: "form-input", id: "password", placeholder: "" %>
+      <% if @user.errors[:password].present? %>
+        <span class="error-text"><%= @user.errors[:password].first %></span>
+      <% end %>
+    </div>
+
+    <!-- ログインボタン -->
+    <div class="form-actions">
+      <%= f.submit "ログイン", class: "btn btn-primary" %>
+    </div>
+
+    <!-- アカウント作成リンク -->
+    <div class="account-link-container">
+      <%= link_to "アカウントをお持ちでない方はこちら", new_user_registration_path, class: "account-link" %>
+    </div>
+  </div>
+<% end %>

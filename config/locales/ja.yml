@@ -1,0 +1,31 @@
+ja:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            nickname:
+              blank: "名前を入力してください"
+            email:
+              blank: "メールアドレスを入力してください"
+              invalid: "メールアドレスは不正な値です"
+              taken: "メールアドレスはすでに存在します"
+            gender_id:
+              other_than: "性別を選択してください"
+            age_group_id:
+              other_than: "年齢を選択してください"
+            profile_image:
+              blank: "画像を選択してください"
+            password:
+              blank: "パスワードを入力してください"
+              invalid: "パスワードは英字と数字を含む必要があります"
+              too_short: "パスワードは%{count}文字以上で入力してください"
+            password_confirmation:
+              confirmation: "パスワードが一致しません"
+
+  devise:
+    failure:
+      not_found_in_database: "メールアドレスまたはパスワードが正しくありません。"
+      invalid: "無効なメールアドレスまたはパスワードです。"
+      last_attempt: "注意: アカウントがロックされるまであと1回です。"
+      locked: "アカウントがロックされました。"
