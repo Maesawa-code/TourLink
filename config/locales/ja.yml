@@ -8,6 +8,8 @@ ja:
               blank: "名前を入力してください"
             email:
               blank: "メールアドレスを入力してください"
+              invalid: "メールアドレスは不正な値です"
+              taken: "メールアドレスはすでに存在します"
             gender_id:
               other_than: "性別を選択してください"
             age_group_id:
@@ -17,6 +19,7 @@ ja:
             password:
               blank: "パスワードを入力してください"
               invalid: "パスワードは英字と数字を含む必要があります"
+              too_short: "パスワードは%{count}文字以上で入力してください"
             password_confirmation:
               confirmation: "パスワードが一致しません"
 

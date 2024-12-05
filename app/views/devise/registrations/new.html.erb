@@ -43,7 +43,7 @@
     <!-- パスワード -->
     <div class="field">
       <%= f.label :password, "パスワードを入力してください", class: "form-text" %>
-      <%= f.password_field :password, class: "form-input", id: "password" %>
+      <%= f.password_field :password, class: "form-input", id: "password", placeholder: "6文字以上の半角英数字" %>
       <% if @user.errors[:password].present? %>
         <span class="error-text"><%= @user.errors[:password].first %></span>
       <% end %>

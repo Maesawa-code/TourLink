@@ -1,9 +1,9 @@
 class TopScreenController < ApplicationController
   def index
     # if user_signed_in?
-    #   redirect_to dashboard_path
+    #   redirect_to home_path
     # else
-    #   render :home
+    #   render :top_screen
     # end
   end
 end
