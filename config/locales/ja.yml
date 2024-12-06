@@ -11,9 +11,9 @@ ja:
               invalid: "メールアドレスは不正な値です"
               taken: "メールアドレスはすでに存在します"
             gender_id:
-              other_than: "性別を選択してください"
+              blank: "性別を選択してください"
             age_group_id:
-              other_than: "年齢を選択してください"
+              blank: "年齢を選択してください"
             profile_image:
               blank: "画像を選択してください"
             password:

@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class PostsController < ApplicationController
   def index
     if user_signed_in?
       render :index

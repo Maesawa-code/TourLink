@@ -15,7 +15,6 @@
  */
 
 
-
 /* エラーメッセージ */
 .error-alert {
   margin-bottom: 16px;
@@ -26,38 +25,6 @@
   border-radius: 8px;
 }
 
-/* タブレット */
-@media (max-width: 768px) {
-  .account-form {
-    padding: 24px;
-    border-radius: 12px;
+@media screen {
+    * {font-size: 16px; }  
   }
-
-  .form-input {
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  .submit-button {
-    padding: 14px;
-    font-size: 16px;
-  }
-}
-
-/* スマートフォン */
-@media (max-width: 480px) {
-  .account-form {
-    padding: 16px;
-    border-radius: 8px;
-  }
-
-  .form-input {
-    padding: 8px;
-    font-size: 12px;
-  }
-
-  .submit-button {
-    padding: 12px;
-    font-size: 14px;
-  }
-}
