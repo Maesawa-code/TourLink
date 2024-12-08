@@ -4,6 +4,7 @@
   background-color: #f3eae0; /* 白背景 */
   width: 100%;
   max-width: 800px;
+  height: 10vh;
   bottom: 0;
   z-index: 100;
   box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1); 
