@@ -1,51 +1,49 @@
-/* 全体のコンテナ */
-.body__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #2f486d; /* 青色の背景 */
-  color: #ffffff;
-  min-height: 100vh; /* 画面全体の高さを確保 */
-  padding: 16px;
-}
-
-/* フォーム全体のコンテナ */
 .postsNew__container {
-  background-color: #223148; /* 内側の暗い青色 */
-  border-radius: 16px;
-  padding: 32px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 影を追加 */
+  background-color: #f3eae0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 100%;
-  max-width: 600px; /* 最大幅を指定 */
+  max-width: 800px;
+  overflow-y: auto;
+  height: 100vh;
+  padding: 32px 0;
 }
 
-/* ヘッダーテキスト */
 .postsNew__headerText {
   font-size: 24px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 24px;
-  color: #f3eae0; /* 明るいテキストカラー */
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* テキストの影 */
+  color: #223148;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* 各フォームフィールド */
 .postsNew__field {
-  margin-bottom: 24px;
+  position: relative;
+  margin-bottom: 48px;
 }
 
-/* ラベル */
+.postsNew__errorText {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: red;
+  text-align: center;
+  padding: 2px 4px;
+  width: auto;
+}
+
 .postsNew__label {
   font-size: 16px;
   font-weight: bold;
-  color: #ffffff;
+  color: #223148;
   display: block;
   margin-bottom: 8px;
 }
 
-/* 入力フィールド */
 .postsNew__input {
-  width: 100%;
+  width: 64%;
   padding: 12px;
   font-size: 16px;
   border: none;
@@ -56,13 +54,12 @@
 }
 
 .postsNew__input:focus {
-  outline: 2px solid #f3eae0; /* フォーカス時の枠線 */
-  box-shadow: 0 4px 8px rgba(243, 234, 224, 0.5); /* フォーカス時の影 */
+  outline: 2px solid #f3eae0;
+  box-shadow: 0 4px 8px rgba(243, 234, 224, 0.5);
 }
 
-/* セレクトボックス */
 .postsNew__selectBox {
-  width: 100%;
+  width: 64%;
   padding: 12px;
   font-size: 16px;
   border: none;
@@ -72,16 +69,8 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* エラーテキスト */
-.postsNew__errorText {
-  color: #ff4d4d; /* 赤色のエラー */
-  font-size: 14px;
-  margin-top: 8px;
-}
-
-/* 提出ボタン */
 .postsNew__submitButton {
-  width: 100%;
+  width: 64%;
   padding: 16px;
   font-size: 18px;
   font-weight: bold;
@@ -96,21 +85,29 @@
 }
 
 .postsNew__submitButton:hover {
-  background-color: #f3eae0;
-  color: #2f486d;
-  transform: scale(1.05); /* 少し拡大 */
+  transform: scale(1.05);
 }
 
-/* フォーム全体の余白 */
 .postsNew__formWrap {
   margin: 16px 0;
 }
 
-.postsNew__input {
-  padding: 8px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-  max-width: 400px;
+.postsNew__backButton {
+  display: inline-block;
+  width: 32%;
+  margin-top: 32px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #223148;
+  background-color: #d2c7b8;
+  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.postsNew__backButton:hover {
+  transform: scale(1.05);
 }

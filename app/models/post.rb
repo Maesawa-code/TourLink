@@ -12,8 +12,7 @@ class Post < ApplicationRecord
   validates :bike_genre_id, presence: true
   validates :engine_capacity_id, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validates :prefecture_id, presence: true,  numericality: { only_integer: true, greater_than: 0 }
-  validates :note, presence: true
-
+  validates :note, length: { maximum: 100 }
   private
 
   def scheduled_date_cannot_be_in_the_past

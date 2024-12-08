@@ -1,36 +1,32 @@
-/* 背景と全体のスタイル */
 body {
   background-color: #2f486d;
-  background-size: cover;                 /* 背景を画面全体に拡大 */
-  background-position: center;            /* 背景を中央に配置 */
-  background-repeat: no-repeat;           /* 背景を繰り返さない */
-  height: 100vh;                          /* ビューポート全体の高さ */
-  margin: 0;                              /* 余白をなくす */
-  display: flex;                          /* コンテンツをフレックスで配置 */
-  flex-direction: column;                 /* 縦方向に並べる */
-  align-items: center;                    /* 横方向中央揃え */
-  justify-content: center;                /* 縦方向中央揃え */
-  text-align: center;                     /* テキストを中央揃え */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-/* アプリ名のスタイル */
 h1 {
-  font-size: 80px;          /* アプリ名の文字サイズ (8x10) */
-  color: white;             /* 白い文字 */
-  margin-bottom: 192px;     /* ボタンとの間隔 (8x24) */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* テキストの影 (8x1) */
+  font-size: 80px;
+  color: white;
+  margin-bottom: 192px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-/* ボタンを横並びにするためのコンテナ */
 .button-container {
-  display: flex;                /* フレックスボックスで配置 */
-  gap: 16px;                    /* ボタン間の間隔 (8x2) */
-  flex-wrap: wrap;              /* 横幅が狭い場合はボタンを折り返す */
-  justify-content: center;      /* 中央揃え */
-  margin-top: 16px;             /* ボタン群の上部余白 (8x2) */
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
 }
 
-/* ボタンのスタイル */
 .button {
   width: 192px;
   padding: 16px;
@@ -46,7 +42,6 @@ h1 {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* ボタンのホバー時 */
 .button:hover {
   background-color: rgba(255, 255, 255, 0.8);
   color: black;

@@ -17,49 +17,49 @@
 }
 
 .form-group {
-  width: 100%; /* フォームグループの幅 */
-  margin-bottom: 24px; /* 下部の余白 */
+  width: 100%;
+  margin-bottom: 24px;
 }
 
 .form-label {
-  font-size: 16px; /* ラベルのフォントサイズ */
-  font-weight: bold; /* 太字 */
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .form-input {
-  width: 80%; /* 入力欄の幅をフォームいっぱいに */
-  padding: 12px; /* 内側余白 */
-  font-size: 16px; /* フォントサイズ */
-  border: none; /* ボーダーなし */
-  border-radius: 8px; /* 角を丸める */
-  background-color: #ffffff; /* 背景色 */
-  color: #2f486d; /* 文字色 */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 入力欄の影 */
+  width: 80%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #2f486d;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .form-input:focus {
-  outline: 2px solid #4caf50; /* フォーカス時のアウトライン色 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* フォーカス時の影 */
+  outline: 2px solid #4caf50;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .form-actions {
-  margin-top: 16px; /* 上部の余白 */
-  width: 100%; /* ボタン幅 */
+  margin-top: 16px;
+  width: 100%;
 }
 
 .btn-primary {
-  width: 100%; /* ボタンをフォーム幅いっぱいに */
-  padding: 16px; /* 内側余白 */
-  font-size: 18px; /* フォントサイズ */
-  font-weight: bold; /* 太字 */
-  color: white; /* 白文字 */
-  background-color: #223148; /* 背景色 */
-  border: none; /* ボーダーなし */
-  border-radius: 12px; /* 角を丸める */
-  cursor: pointer; /* カーソルをポインタに */
-  text-transform: uppercase; /* 大文字に変換 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ボタンの影 */
-  transition: background-color 0.3s ease, transform 0.3s ease; /* スムーズな変化 */
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #223148;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn-primary:hover {
@@ -69,10 +69,10 @@
 }
 
 .error-text {
-  color: #ff4d4d; /* エラー文字の色 */
-  font-size: 14px; /* フォントサイズ */
-  margin-top: 4px; /* 上部の余白 */
-  display: block; /* 表示設定 */
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-top: 4px;
+  display: block;
 }
 
 .account-link-container {
@@ -91,11 +91,4 @@
 .account-link:hover {
   color: #4caf50;
   opacity: 1;
-}
-
-.error-text {
-  color: #ff4d4d;
-  font-size: 14px;
-  margin-top: 4px;
-  display: block;
 }

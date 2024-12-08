@@ -1,9 +1,8 @@
-
 .postsIndex__container {
   position: fixed;
   width: 100%;
   max-width: 800px;
-  top: 10vh; /* ヘッダーの高さ分下げる */
+  top: 10vh;
   bottom: 10vh;
   background-color: #d2c7b8;
   color: #223148;
