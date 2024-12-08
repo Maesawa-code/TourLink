@@ -25,6 +25,47 @@
   border-radius: 8px;
 }
 
-@media screen {
-    * {font-size: 16px; }  
+body {
+  background-color: #2f486d; /* 背景色 */
+  color: #e0e0e0; /* 文字色 */
+  min-height: 100vh; /* 画面全体の高さを確保 */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+  
+.body__container {
+  flex: 1; /* 画面の残りの高さを埋める */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* コンテンツを中央揃え */
+  justify-content: center; /* コンテンツを縦中央揃え */
+  background-color: #2f486d;
+  color: #fff;
+  width: 100%; /* 幅を画面いっぱいに */
+  max-width: 800px;
+  min-height: 100vh; /* 画面全体の高さを確保 */
+  padding: 16px; /* 画面の端に余白を設ける */
+}
+
+@media screen and (max-width: 960px) {
+  body {
+    font-size: 14px; /* スマホ向けにフォントを少し小さく */
   }
+
+  .body__container {
+    padding: 8px; /* スマホ向けに余白を調整 */
+  }
+}
+
+@media screen and (min-width: 960px) {
+  * {
+    font-size: 16px; /* PC向けフォントサイズ */
+  }
+
+  .body__container {
+    max-width: 960px; /* PCで一定の幅に制限 */
+    margin: 0 auto; /* コンテンツを中央揃え */
+  }
+}

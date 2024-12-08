@@ -1,16 +1,15 @@
 /* ヘッダー全体のスタイル */
 .header {
-  position: sticky;
+  position: fixed; /* 固定表示 */
+  top: 0;
   height: 10vh; /* 高さをページの10% */
+  width: 100%;
+  max-width: 800px;
   display: flex; /* 子要素を横並びに */
-  justify-content: space-between; /* 左右に配置 */
   align-items: center; /* 縦中央揃え */
   background-color: #f3eae0; /* 背景色 */
-  padding: 0 16px; /* 左右の余白 */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 下方向の影 */
-  position: sticky; /* スクロール時に固定 */
-  top: 0; /* 上部に固定 */
-  z-index: 100; /* 重なり順を確保 */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
 }
 
 /* アプリタイトルのスタイル */
@@ -19,6 +18,9 @@
   font-weight: bold; /* 太字 */
   color: #223148; /* テキストカラー */
   margin: 0; /* 余白リセット */
+  position: absolute; /* 絶対配置 */
+  left: 50%; /* 水平方向に中央揃え */
+  transform: translateX(-50%);
 }
 
 /* プロフィール画像のコンテナ */
@@ -28,6 +30,7 @@
   border-radius: 50%; /* 丸い形にする */
   overflow: hidden; /* アイコンが枠を超えないようにする */
   border: 2px solid #223148; /* 枠線のスタイル */
+  margin-left: 16px; 
 }
 
 /* ユーザーアイコン画像 */
@@ -35,11 +38,4 @@
   width: 100%; /* アイコンをコンテナに合わせる */
   height: 100%; /* 高さも合わせる */
   object-fit: cover; /* アイコンを中央で収める */
-}
-
-/* メディアクエリ：デフォルトのフォントサイズ */
-@media screen {
-  * {
-    font-size: 16px;
-  }
 }

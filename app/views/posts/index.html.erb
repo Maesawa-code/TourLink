@@ -1,1 +1,29 @@
-<h1>TourLink</h1>
+<%= render 'shared/header' %>
+
+<div class="postsIndex__container">
+  <% @posts.each do |post| %>
+    <div class="postsIndex__postCard">
+      
+      <!-- 投稿者情報 -->
+        <div class="postsIndex__authorInfo">
+          <%= image_tag post.user.profile_image.attached? ? rails_blob_url(post.user.profile_image) : "https://via.placeholder.com/40", 
+                        alt: "#{post.user.nickname}のプロフィール画像", class: "postsIndex__authorImage" %>
+          <span class="postsIndex__authorName"><%= post.user.nickname %></span>
+        </div>
+        <span class="postsIndex__date">投稿日: <%= post.created_at.strftime('%Y/%m/%d') %></span>
+      
+      <!-- 投稿詳細情報 -->
+      <h2 class="postsIndex__title"><%= post.title %></h2>
+      <p class="postsIndex__field"><strong>予定日:</strong> <%= post.scheduled_date.present? ? post.scheduled_date.strftime('%Y/%m/%d') : "未定" %></p>
+      <p class="postsIndex__field"><strong>バイクジャンル:</strong> <%= post.bike_genre.name %></p>
+      <p class="postsIndex__field"><strong>排気量:</strong> <%= post.engine_capacity.name %></p>
+      <p class="postsIndex__field"><strong>都道府県:</strong> <%= post.prefecture.name %></p>
+      <p class="postsIndex__content"><strong>メモ:</strong> <%= truncate(post.note, length: 100) %></p>
+
+      <!-- 詳細リンク -->
+      <%= link_to '詳細を見る', post_path(post), class: 'postsIndex__link' %>
+    </div>
+  <% end %>
+</div>
+
+<%= render 'shared/footer' %>
