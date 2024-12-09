@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'top_screen#index'
-  resources :home, only: [:index] 
+  root to: 'posts#index'
+  resources :top_screen, only: [:index]
+  resources :posts
   devise_for :users, controllers: {
   registrations: 'users/registrations'
 }

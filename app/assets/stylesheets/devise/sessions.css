@@ -1,0 +1,94 @@
+.login-form {
+  max-height: 100vh;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 32px;
+  background-color: #2f486d;
+  color: white;
+}
+
+.form-header-text {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-bottom: 24px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.form-label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 80%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #2f486d;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-input:focus {
+  outline: 2px solid #4caf50;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-actions {
+  margin-top: 16px;
+  width: 100%;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #223148;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #f3eae0;
+  color: #223148;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.error-text {
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-top: 4px;
+  display: block;
+}
+
+.account-link-container {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.account-link {
+  font-size: 14px;
+  color: #ffffff;
+  text-decoration: underline;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.account-link:hover {
+  color: #4caf50;
+  opacity: 1;
+}

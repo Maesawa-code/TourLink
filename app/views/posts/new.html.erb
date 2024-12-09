@@ -1,0 +1,90 @@
+<div class="postsNew__container">
+  <div class="postsNew__headerText">
+    新規投稿
+  </div>
+
+  <%= form_with model: @post, local: true, class: "postsNew__form" do |f| %>
+    <!-- タイトル -->
+    <div class="postsNew__field">
+      <%= f.label :title, class: "postsNew__label" do %>
+        タイトル
+        <span class="indispensable">必須</span>
+      <% end %>
+      <%= f.text_field :title, class: "postsNew__input", id: "title", placeholder: "例: ナイトツーリング" %>
+      <% if @post.errors[:title].present? %>
+        <span class="postsNew__errorText"><%= @post.errors[:title].first %></span>
+      <% end %>
+    </div>
+
+    <!-- 予定日 -->
+    <div class="postsNew__field">
+      <%= f.label :scheduled_date, class: "postsNew__label" do %>
+        予定日
+        <span class="indispensable">必須</span>
+      <% end %>
+      <%= f.date_field :scheduled_date, class: "postsNew__input" %>
+      <% if @post.errors[:scheduled_date].present? %>
+        <span class="postsNew__errorText"><%= @post.errors[:scheduled_date].first %></span>
+      <% end %>
+    </div>
+
+    <!-- バイクジャンル -->
+    <div class="postsNew__field">
+      <%= f.label :bike_genre_id, class: "postsNew__label" do %>
+        バイクジャンル
+        <span class="indispensable">必須</span>
+      <% end %>
+      <%= f.collection_select :bike_genre_id, BikeGenre.all, :id, :name, 
+          { prompt: "--選択してください--" }, { class: "postsNew__input postsNew__selectBox" } %>
+      <% if @post.errors[:bike_genre_id].present? %>
+        <span class="postsNew__errorText"><%= @post.errors[:bike_genre_id].first %></span>
+      <% end %>
+    </div>
+
+    <!-- 排気量 -->
+    <div class="postsNew__field">
+      <%= f.label :engine_capacity_id, class: "postsNew__label" do %>
+        排気量
+        <span class="indispensable">必須</span>
+      <% end %>
+      <%= f.collection_select :engine_capacity_id, EngineCapacity.all, :id, :name, 
+          { prompt: "--選択してください--" }, { class: "postsNew__input postsNew__selectBox" } %>
+      <% if @post.errors[:engine_capacity_id].present? %>
+        <span class="postsNew__errorText"><%= @post.errors[:engine_capacity_id].first %></span>
+      <% end %>
+    </div>
+
+    <!-- 都道府県 -->
+    <div class="postsNew__field">
+      <%= f.label :prefecture_id, class: "postsNew__label" do %>
+        都道府県
+        <span class="indispensable">必須</span>
+      <% end %>
+      <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, 
+          { prompt: "--選択してください--" }, { class: "postsNew__input postsNew__selectBox" } %>
+      <% if @post.errors[:prefecture_id].present? %>
+        <span class="postsNew__errorText"><%= @post.errors[:prefecture_id].first %></span>
+      <% end %>
+    </div>
+
+    <!-- メモ -->
+    <%= javascript_include_tag 'posts_form', 'data-turbo-track': 'reload' %>
+    <div class="postsNew__field">
+      <%= f.label :note, "メモ", class: "postsNew__label" %>
+      <%= f.text_area :note, class: "postsNew__input", id: "note", placeholder: "例: 夜景を楽しむため、20時に集合予定です。" %>
+      <% if @post.errors[:note].present? %>
+        <span class="postsNew__errorText"><%= @post.errors[:note].first %></span>
+      <% end %>
+    </div>
+
+    <!-- 提出ボタン -->
+    <div class="postsNew__actions">
+      <%= f.submit "投稿する", class: "postsNew__submitButton" %>
+    </div>
+  <% end %>
+
+  <!-- 戻るボタン -->
+  <div class="postsNew__actions">
+    <%= link_to "戻る", posts_path, class: "postsNew__backButton" %>
+  </div>
+</div>
