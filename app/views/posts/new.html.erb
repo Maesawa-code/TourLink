@@ -6,7 +6,10 @@
   <%= form_with model: @post, local: true, class: "postsNew__form" do |f| %>
     <!-- タイトル -->
     <div class="postsNew__field">
-      <%= f.label :title, "タイトル", class: "postsNew__label" %>
+      <%= f.label :title, class: "postsNew__label" do %>
+        タイトル
+        <span class="indispensable">必須</span>
+      <% end %>
       <%= f.text_field :title, class: "postsNew__input", id: "title", placeholder: "例: ナイトツーリング" %>
       <% if @post.errors[:title].present? %>
         <span class="postsNew__errorText"><%= @post.errors[:title].first %></span>
@@ -15,7 +18,10 @@
 
     <!-- 予定日 -->
     <div class="postsNew__field">
-      <%= f.label :scheduled_date, "予定日", class: "postsNew__label" %>
+      <%= f.label :scheduled_date, class: "postsNew__label" do %>
+        予定日
+        <span class="indispensable">必須</span>
+      <% end %>
       <%= f.date_field :scheduled_date, class: "postsNew__input" %>
       <% if @post.errors[:scheduled_date].present? %>
         <span class="postsNew__errorText"><%= @post.errors[:scheduled_date].first %></span>
@@ -24,7 +30,10 @@
 
     <!-- バイクジャンル -->
     <div class="postsNew__field">
-      <%= f.label :bike_genre_id, "バイクジャンル", class: "postsNew__label" %>
+      <%= f.label :bike_genre_id, class: "postsNew__label" do %>
+        バイクジャンル
+        <span class="indispensable">必須</span>
+      <% end %>
       <%= f.collection_select :bike_genre_id, BikeGenre.all, :id, :name, 
           { prompt: "--選択してください--" }, { class: "postsNew__input postsNew__selectBox" } %>
       <% if @post.errors[:bike_genre_id].present? %>
@@ -34,7 +43,10 @@
 
     <!-- 排気量 -->
     <div class="postsNew__field">
-      <%= f.label :engine_capacity_id, "排気量", class: "postsNew__label" %>
+      <%= f.label :engine_capacity_id, class: "postsNew__label" do %>
+        排気量
+        <span class="indispensable">必須</span>
+      <% end %>
       <%= f.collection_select :engine_capacity_id, EngineCapacity.all, :id, :name, 
           { prompt: "--選択してください--" }, { class: "postsNew__input postsNew__selectBox" } %>
       <% if @post.errors[:engine_capacity_id].present? %>
@@ -44,7 +56,10 @@
 
     <!-- 都道府県 -->
     <div class="postsNew__field">
-      <%= f.label :prefecture_id, "都道府県", class: "postsNew__label" %>
+      <%= f.label :prefecture_id, class: "postsNew__label" do %>
+        都道府県
+        <span class="indispensable">必須</span>
+      <% end %>
       <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, 
           { prompt: "--選択してください--" }, { class: "postsNew__input postsNew__selectBox" } %>
       <% if @post.errors[:prefecture_id].present? %>

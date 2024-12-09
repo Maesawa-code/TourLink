@@ -42,6 +42,16 @@
   margin-bottom: 8px;
 }
 
+.indispensable {
+  background: #ea352d;
+  margin-left: 8px;
+  padding: 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
 .postsNew__input {
   width: 64%;
   padding: 12px;

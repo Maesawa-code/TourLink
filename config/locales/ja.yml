@@ -22,12 +22,14 @@ ja:
               too_short: "パスワードは%{count}文字以上で入力してください"
             password_confirmation:
               confirmation: "パスワードが一致しません"
-        post: # Postモデルのエラー追加
+        post:
           attributes:
             title:
               blank: "タイトルを入力してください"
             scheduled_date:
               blank: "予定日を選択してください"
+              invalid: "予定日には有効な日付を選択してください"
+              past: "予定日は今日以降の日付を選択してください"
             bike_genre_id:
               blank: "バイクジャンルを選択してください"
             engine_capacity_id:
@@ -36,10 +38,14 @@ ja:
               blank: "都道府県を選択してください"
             note:
               too_long: "メモは%{count}文字以内で入力してください"
+            user:
+              required: "ユーザーが紐付いていません"
 
   errors:
     messages:
       blank: "を入力してください"
+      too_long: "は%{count}文字以内で入力してください"
+      invalid: "が無効な値です"
 
   devise:
     failure:
