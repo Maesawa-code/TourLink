@@ -121,3 +121,10 @@
 .postsNew__backButton:hover {
   transform: scale(1.05);
 }
+
+.postsNew__countText {
+  display: block;
+  font-size: 12px;
+  color: #666; /* カウント文字の色 */
+  margin-top: 4px; /* メモ欄との間隔 */
+}

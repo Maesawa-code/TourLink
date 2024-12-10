@@ -1,19 +1,17 @@
-/* コンテナ全体のスタイル */
 .postShow__container {
   position: fixed;
   width: 100%;
   max-width: 800px;
   top: 10vh;
   bottom: 10vh;
-  background-color: #f3eae0; /* 背景色 */
-  color: #223148; /* テキストカラー */
+  background-color: #f3eae0;
+  color: #223148;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   padding: 32px 0;
 }
 
-/* ヘッダー部分のスタイル */
 .postShow__headerText {
   font-size: 24px;
   font-weight: bold;
@@ -23,7 +21,6 @@
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* 詳細情報のテーブル */
 .postShow__table {
   width: 100%;
   border-collapse: collapse;
@@ -48,19 +45,17 @@
   color: #555;
 }
 
-/* 詳細ページのメモ欄 */
 .postShow__value--note {
-  max-height: 200px; /* 最大高さを指定 */
-  overflow-y: auto; /* 縦方向のスクロールを有効に */
-  word-wrap: break-word; /* 単語が長すぎる場合に折り返す */
-  white-space: pre-wrap; /* 改行を保持して表示 */
-  padding: 8px; /* 内容との余白を確保 */
-  border: 1px solid #d2c7b8; /* 境界線を追加して視覚的に区別 */
-  border-radius: 4px; /* 角を少し丸める */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 軽い影を追加 */
+  max-height: 200px;
+  overflow-y: auto;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  padding: 8px;
+  border: 1px solid #d2c7b8;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* アクションボタンのスタイル */
 .postShow__actions {
   display: flex;
   justify-content: space-between;
@@ -103,7 +98,6 @@
   transform: scale(1.05);
 }
 
-/* 戻るボタンのスタイル */
 .postShow__backLink {
   text-align: center;
   margin-top: 16px;

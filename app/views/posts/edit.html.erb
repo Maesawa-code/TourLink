@@ -1,0 +1,51 @@
+<%= render "shared/header" %>
+
+<div class="postEdit__container">
+  <h1 class="postEdit__header">投稿を編集</h1>
+
+  <%= form_with model: @post, local: true, class: "postEdit__form" do |f| %>
+    <div class="postEdit__formGroup">
+      <%= f.label :title, "タイトル", class: "postEdit__label" %>
+      <%= f.text_field :title, class: "postEdit__input", required: true %>
+    </div>
+
+    <div class="postEdit__formGroup">
+      <%= f.label :scheduled_date, "予定日", class: "postEdit__label" %>
+      <%= f.date_field :scheduled_date, class: "postEdit__input", required: true %>
+    </div>
+
+    <div class="postEdit__formGroup">
+      <%= f.label :bike_genre_id, "バイクジャンル", class: "postEdit__label" %>
+      <%= f.collection_select :engine_capacity_id, EngineCapacity.all, :id, :name, 
+      {}, { class: "postsNew__input postsNew__selectBox" } %>
+    </div>
+
+    <div class="postEdit__formGroup">
+      <%= f.label :engine_capacity_id, "排気量", class: "postEdit__label" %>
+      <%= f.collection_select :engine_capacity_id, EngineCapacity.all, :id, :name, 
+      {}, { class: "postsNew__input postsNew__selectBox" } %>
+    </div>
+
+    <div class="postEdit__formGroup">
+      <%= f.label :prefecture_id, "都道府県", class: "postEdit__label" %>
+      <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name,
+      {}, { class: "postsNew__input postsNew__selectBox" } %>
+    </div>
+
+    <%= javascript_include_tag 'posts_form', 'data-turbo-track': 'reload' %>
+    <div class="postEdit__formGroup">
+      <%= f.label :note, "メモ", class: "postEdit__label" %>
+      <%= f.text_area :note, class: "postEdit__textarea", id: "note" %>
+      <% if @post.errors[:note].present? %>
+        <span class="postsEdit__errorText"><%= @post.errors[:note].first %></span>
+      <% end %>
+    </div>
+
+    <div class="postEdit__actions">
+      <%= f.submit "保存する", class: "postEdit__submitButton" %>
+      <%= link_to "戻る", post_path(@post), class: "postEdit__backButton" %>
+    </div>
+  <% end %>
+</div>
+
+<%= render "shared/footer" %>
