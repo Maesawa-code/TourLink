@@ -40,6 +40,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      redirect_to root_path, notice: "投稿を削除しました。"
+    else
+      redirect_to post_path(@post), alert: "投稿の削除に失敗しました。"
+    end
+  end
+
   private
 
   def post_params
