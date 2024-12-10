@@ -1,6 +1,10 @@
 <header class="header">
-    <h1 class="app-title">TourLink</h1>
+  <h1 class="app-title">TourLink</h1>
+  <div class="user-info">
     <div class="user-icon">
       <%= image_tag(current_user.profile_image, alt: "User Icon", class: "user-profile-icon") %>
     </div>
+    <span class="user-name"><%= current_user.nickname %></span>
+  </div>
+  <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: "logout" %>
 </header>

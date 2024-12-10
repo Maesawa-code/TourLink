@@ -1,0 +1,56 @@
+<%= render "shared/header" %>
+
+<div class="postShow__container">
+  <div class="postShow__headerText">
+    <%= @post.title %>
+  </div>
+
+  <div class="postShow__details">
+    <table class="postShow__table">
+      <tbody>
+        <tr>
+          <th class="postShow__label">タイトル</th>
+          <td class="postShow__value"><%= @post.title %></td>
+        </tr>
+        <tr>
+          <th class="postShow__label">予定日</th>
+          <td class="postShow__value"><%= @post.scheduled_date.strftime('%Y年%m月%d日') %></td>
+        </tr>
+        <tr>
+          <th class="postShow__label">バイクジャンル</th>
+          <td class="postShow__value"><%= @post.bike_genre.name %></td>
+        </tr>
+        <tr>
+          <th class="postShow__label">排気量</th>
+          <td class="postShow__value"><%= @post.engine_capacity.name %></td>
+        </tr>
+        <tr>
+          <th class="postShow__label">都道府県</th>
+          <td class="postShow__value"><%= @post.prefecture.name %></td>
+        </tr>
+        <tr>
+        <th class="postShow__label">メモ</th>
+          <td class="postShow__value postShow__value--note">
+          <%= @post.note.presence || 'メモはありません' %>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <% if user_signed_in? %>
+    <% if current_user == @post.user %>
+      <div class="postShow__actions">
+        <%= link_to "編集する", edit_post_path(@post), class: "postShow__editButton" %>
+        <%= link_to "削除する", post_path(@post), method: :delete, class: "postShow__deleteButton", data: { confirm: "本当に削除しますか？" } %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="postShow__backLink">
+    <%= link_to "投稿一覧に戻る", posts_path, class: "postShow__backButton" %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
