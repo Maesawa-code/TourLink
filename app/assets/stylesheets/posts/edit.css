@@ -1,0 +1,131 @@
+.postEdit__container {
+  position: fixed;
+  width: 100%;
+  max-width: 800px;
+  top: 10vh;
+  bottom: 10vh;
+  background-color: #d2c7b8;
+  color: #223148;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 24px; /* 8の倍数 */
+  box-sizing: border-box;
+}
+
+.postEdit__header {
+  font-size: 24px; /* 8の倍数 */
+  font-weight: bold;
+  color: #223148;
+  margin-bottom: 24px; /* 8の倍数 */
+  text-align: center;
+}
+
+.postEdit__formGroup {
+  margin-bottom: 16px; /* 8の倍数 */
+  position: relative;
+}
+
+.postEdit__label {
+  display: block;
+  font-size: 16px; /* 8の倍数 */
+  font-weight: bold;
+  color: #223148;
+  margin-bottom: 8px; /* 8の倍数 */
+}
+
+.postEdit__input,
+.postEdit__textarea {
+  width: 64%;
+  padding: 16px; /* 8の倍数 */
+  border: 1px solid #ddd;
+  border-radius: 8px; /* 8の倍数 */
+  font-size: 16px; /* 8の倍数 */
+  background-color: #fff;
+}
+
+.postEdit__select {
+  width: 100%;
+}
+
+.postsNew__selectBox {
+  width: 64%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #223148;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.postsEdit__input {
+  width: 64%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #223148;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.postEdit__textarea {
+  height: 128px; /* 8の倍数 */
+}
+
+.postEdit__actions {
+  display: flex;
+  flex-direction: column; /* 縦方向に配置 */
+  gap: 16px; /* 8の倍数 */
+  align-items: center;
+  margin-top: 24px; /* 8の倍数 */
+}
+
+.postEdit__submitButton {
+  width: 48%;
+  padding: 16px; /* 8の倍数 */
+  font-size: 16px; /* 8の倍数 */
+  color: #fff;
+  background-color: #5ca5f3;
+  border: none;
+  border-radius: 8px; /* 8の倍数 */
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.postEdit__submitButton:hover {
+  background-color: #3a8ed6;
+  transform: scale(1.05);
+}
+
+.postEdit__backButton {
+  width: 32%;
+  padding: 16px; /* 8の倍数 */
+  font-size: 16px; /* 8の倍数 */
+  color: white;
+  background-color: #f15c5c;
+  text-decoration: none;
+  border-radius: 8px; /* 8の倍数 */
+  text-align: center;
+  margin-top: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.postEdit__backButton:hover {
+  background-color: #d34a4a;
+  transform: scale(1.05);
+}
+
+.postsEdit__errorText {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: red;
+  text-align: center;
+  padding: 2px 4px;
+  width: auto;
+}
