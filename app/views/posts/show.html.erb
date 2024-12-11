@@ -43,7 +43,7 @@
     <% if current_user == @post.user %>
       <div class="postShow__actions">
         <%= link_to "編集する", edit_post_path(@post), class: "postShow__editButton", data: { turbo: false } %>
-        <%= link_to "削除する", post_path(@post), method: :delete, class: "postShow__deleteButton", data: { confirm: "本当に削除しますか？" } %>
+        <%= link_to "削除する", post_path(@post), data: { turbo_method: :delete }, class: "postShow__deleteButton" %>
       </div>
     <% end %>
   <% end %>
