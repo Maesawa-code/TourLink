@@ -1,0 +1,28 @@
+<%= render 'shared/header' %>
+
+<div class="usersIndex__container">
+  <div class="usersIndex__card">
+    <div class="usersIndex__profileImageWrapper">
+      <%= image_tag @user.profile_image, class: "usersIndex__profileImage" %>
+    </div>
+    <div class="usersIndex__details">
+      <div class="usersIndex__field">
+        <span class="usersIndex__label">名前</span>
+        <span class="usersIndex__value"><%= @user.nickname %></span>
+      </div>
+      <div class="usersIndex__field">
+        <span class="usersIndex__label">性別</span>
+        <span class="usersIndex__value"><%= @user.gender.name %></span>
+      </div>
+      <div class="usersIndex__field">
+        <span class="usersIndex__label">年齢</span>
+        <span class="usersIndex__value"><%= @user.age_group.name %></span>
+      </div>
+    </div>
+    <div class="usersIndex__editLink">
+      <%= link_to 'プロフィールを編集する', edit_user_registration_path, class: "usersIndex__editButton" %>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>
