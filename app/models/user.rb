@@ -15,7 +15,7 @@ class User < ApplicationRecord
   validates :password, presence: true, format: { 
     with: /\A(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]+\z/, 
     message: "パスワードは英字と数字を含む必要があります" 
-  }
+  }, if: :password_required?
 
   def was_attached?
     self.image.attached?
