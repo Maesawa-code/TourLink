@@ -3,8 +3,7 @@ Rails.application.routes.draw do
 
   resources :top_screen, only: [:index]
   resources :posts
-  resources :users, only: [:index]
-
+  resources :users
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }

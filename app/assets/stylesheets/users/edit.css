@@ -1,0 +1,102 @@
+.usersEdit__container {
+  position: fixed;
+  width: 100%;
+  max-width: 800px;
+  top: 10vh;
+  bottom: 10vh;
+  background-color: #f3eae0;
+  color: #223148;
+  display: flex;
+  flex-direction: column;
+  padding: 24px; /* 8の倍数 */
+  box-sizing: border-box;
+}
+
+.usersEdit__header {
+  font-size: 24px; /* 8の倍数 */
+  font-weight: bold;
+  color: #223148;
+  margin-bottom: 24px; /* 8の倍数 */
+  text-align: center;
+}
+
+.usersEdit__field {
+  margin-bottom: 16px; /* 8の倍数 */
+  position: relative;
+}
+
+.usersEdit__label {
+  display: block;
+  font-size: 16px; /* 8の倍数 */
+  font-weight: bold;
+  color: #223148;
+  margin-bottom: 8px; /* 8の倍数 */
+}
+
+.usersEdit__input,
+.usersEdit__select {
+  width: 64%; /* 入力幅を統一 */
+  padding: 16px; /* 8の倍数 */
+  border: 1px solid #ddd;
+  border-radius: 8px; /* 8の倍数 */
+  font-size: 16px; /* 8の倍数 */
+  background-color: #fff;
+  color: #223148;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.usersEdit__actions {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column; /* 縦方向に配置 */
+  gap: 16px; /* 8の倍数 */
+  align-items: center;
+  margin-top: 24px; /* 8の倍数 */
+}
+
+.usersEdit__button {
+  width: 48%;
+  padding: 16px; /* 8の倍数 */
+  font-size: 16px; /* 8の倍数 */
+  color: #fff;
+  background-color: #2f486d;
+  border: none;
+  border-radius: 8px; /* 8の倍数 */
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.usersEdit__button:hover {
+  transform: scale(1.05);
+}
+
+.usersEdit__backButton {
+  width: 32%; /* ボタンの幅を調整 */
+  padding: 16px; /* ボタンの内側の余白 */
+  font-size: 16px; /* 文字のサイズ */
+  color: #2f486d;
+  background-color: #d2c7b8;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px; /* 角丸 */
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.usersEdit__backButton:hover {
+  transform: scale(1.05); /* ホバー時の拡大効果 */
+}
+
+.usersEdit__errorText {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: red;
+  text-align: center;
+  padding: 2px 4px;
+  width: auto;
+}
