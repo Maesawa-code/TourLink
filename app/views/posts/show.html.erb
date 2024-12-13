@@ -51,6 +51,23 @@
   <div class="postShow__backLink">
     <%= link_to "投稿一覧に戻る", posts_path, class: "postShow__backButton" %>
   </div>
+
+  <h2>コメント一覧</h2>
+<% @post.comments.each do |comment| %>
+  <p><strong><%= comment.user.nickname %></strong>: <%= comment.content %></p>
+<% end %>
+
+<h3>コメントを投稿する</h3>
+<%= form_with model: [@post, Comment.new], local: true do |f| %>
+  <div>
+    <%= f.label :content, 'コメント内容' %><br>
+    <%= f.text_area :content %>
+  </div>
+  <div>
+    <%= f.submit '投稿' %>
+  </div>
+<% end %>
+
 </div>
 
 <%= render "shared/footer" %>
