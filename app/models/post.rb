@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   belongs_to_active_hash :prefecture
 
   belongs_to :user
+  has_many :comments
 
   validates :title, presence: true
   validates :scheduled_date, presence: true

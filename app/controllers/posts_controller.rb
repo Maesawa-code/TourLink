@@ -18,15 +18,11 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
-
-    if @post.save
-      redirect_to root_path
-    else
-      render :new, status: :unprocessable_entity
-    end
   end
 
-  def show; end
+  def show; 
+    @comment = Comment.new
+  end
 
   def edit; end
 
