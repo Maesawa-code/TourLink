@@ -76,9 +76,10 @@
   color: #555;
   margin: 0 0 16px;
   line-height: 1.6;
+  word-break: break-all;
 }
 
-.postsIndexlink {
+.postsIndex__link {
   display: inline-block;
   color: #007bff;
   text-decoration: none;

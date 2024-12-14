@@ -40,7 +40,12 @@ ja:
               too_long: "メモは%{count}文字以内で入力してください"
             user:
               required: "ユーザーが紐付いていません"
-
+        comment:
+          attributes:
+            content:
+              blank: "コメントを入力してください"
+              too_long: "コメントは%{count}文字以内で入力してください"
+              
   errors:
     messages:
       blank: "を入力してください"

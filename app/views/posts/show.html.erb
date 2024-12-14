@@ -1,9 +1,10 @@
 <%= render "shared/header" %>
 
 <div class="postShow__container">
-  <div class="postShow__headerText">
-    <%= @post.title %>
-  </div>
+  <div class="postShow__authorInfo">
+    <%= image_tag @post.user.profile_image.variant(resize_to_fill: [48, 48]), class: "postShow__authorImage" %>
+    <span class="postShow__authorName"><%= @post.user.nickname %></span>
+</div>
 
   <div class="postShow__details">
     <table class="postShow__table">
@@ -48,26 +49,46 @@
     <% end %>
   <% end %>
 
+  <div class="postShow__comments">
+  <h2 class="postShow__sectionTitle">コメント一覧</h2>
+  <% if @post.comments.any? %>
+    <% @post.comments.each do |comment| %>
+      <% if comment.persisted? %>
+        <div class="postShow__comment">
+          <p>
+            <% if comment.user.profile_image.attached? %>
+              <%= image_tag comment.user.profile_image.variant(resize_to_fill: [32, 32]), class: "postShow__commentImage" %>
+            <% else %>
+              <%= image_tag "default-profile.png", class: "postShow__commentImage" %>
+            <% end %>
+            <strong><%= comment.user.nickname %></strong>: <%= comment.content %>
+          </p>
+        </div>
+      <% end %>
+    <% end %>
+  <% else %>
+    <p>コメントはまだありません。</p>
+  <% end %>
+</div>
+
+
+
+  <div class="postShow__commentForm">
+    
+    <%= javascript_include_tag 'posts_form', 'data-turbo-track': 'reload' %>
+    <%= form_with model: [@post, @comment], local: true do |f| %>
+        <%= f.label :content, 'コメント内容', class: "postShow__formLabel" %>
+        <%= f.text_area :content, class: "postShow__formControl" %>
+        <%= f.submit '投稿する', class: "postShow__submitButton" %>
+    <% end %>
+    <% if @comment.errors[:content].present? %>
+        <span class="postsEdit__errorText"><%= @comment.errors[:content].first %></span>
+      <% end %>
+  </div>
+
   <div class="postShow__backLink">
     <%= link_to "投稿一覧に戻る", posts_path, class: "postShow__backButton" %>
   </div>
-
-  <h2>コメント一覧</h2>
-<% @post.comments.each do |comment| %>
-  <p><strong><%= comment.user.nickname %></strong>: <%= comment.content %></p>
-<% end %>
-
-<h3>コメントを投稿する</h3>
-<%= form_with model: [@post, Comment.new], local: true do |f| %>
-  <div>
-    <%= f.label :content, 'コメント内容' %><br>
-    <%= f.text_area :content %>
-  </div>
-  <div>
-    <%= f.submit '投稿' %>
-  </div>
-<% end %>
-
 </div>
 
 <%= render "shared/footer" %>

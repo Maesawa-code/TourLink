@@ -96,7 +96,6 @@
 }
 
 .postEdit__submitButton:hover {
-  background-color: #3a8ed6;
   transform: scale(1.05);
 }
 
@@ -114,7 +113,6 @@
 }
 
 .postEdit__backButton:hover {
-  background-color: #d34a4a;
   transform: scale(1.05);
 }
 
