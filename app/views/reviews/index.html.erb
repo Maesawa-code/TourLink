@@ -1,0 +1,33 @@
+<%= render 'shared/header' %>
+
+<div class="reviewsIndex__container">
+  <% @reviews.each do |review| %>
+    <div class="reviewsIndex__reviewCard">
+      
+      <!-- 投稿者情報 -->
+      <div class="reviewsIndex__authorInfo">
+        <%= image_tag review.user.profile_image.attached? ? rails_blob_url(review.user.profile_image) : "https://via.placeholder.com/40", 
+                      alt: "#{review.user.nickname}のプロフィール画像", class: "reviewsIndex__authorImage" %>
+        <span class="reviewsIndex__authorName"><%= review.user.nickname %></span>
+      </div>
+      <span class="reviewsIndex__date">投稿日: <%= review.created_at.strftime('%Y/%m/%d') %></span>
+      
+      <!-- レビュー詳細情報 -->
+      <h2 class="reviewsIndex__title"><%= review.title %></h2>
+      <p class="reviewsIndex__field"><strong>評価:</strong> <%= review.rating %> / 5</p>
+      <% if review.comment.present? %>
+        <p class="reviewsIndex__content"><strong>コメント:</strong> <%= review.comment %></p>
+      <% end %>
+      <% if review.image.attached? %>
+        <div class="reviewsIndex__image">
+          <%= image_tag review.image, alt: 'レビュー画像', class: 'reviewsIndex__reviewImage' %>
+        </div>
+      <% end %>
+
+      <!-- 詳細リンク -->
+      <%= link_to '詳細を見る', review_path(review), class: 'reviewsIndex__link' %>
+    </div>
+  <% end %>
+</div>
+
+<%= render 'shared/footer' %>
