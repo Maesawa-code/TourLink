@@ -27,6 +27,10 @@
       <%= link_to '詳細を見る', post_path(post), class: 'postsIndex__link' %>
     </div>
   <% end %>
+
+    <%= link_to new_post_path, class: "NewPostButton", data: { turbo: false } do %>
+      <img src="https://tourlink.s3.ap-northeast-1.amazonaws.com/add.svg" alt="新規投稿" class="NewPostButton__icon">
+    <% end %>
 </div>
 
 <%= render 'shared/footer' %>

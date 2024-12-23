@@ -4,7 +4,7 @@
   max-width: 800px;
   top: 10vh;
   bottom: 10vh;
-  background-color: #f0ebe3;
+  background-color: #d2c7b8;;
   color: #223148;
   display: flex;
   flex-direction: column;
@@ -28,6 +28,7 @@
 
 .reviewsIndex__authorInfo {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 16px;
 }
@@ -108,10 +109,10 @@
   border-bottom-color: #0056b3;
 }
 
-.NewButton {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+.NewReviewButton {
+  position: fixed;
+  bottom: 12%;
+  margin-left: 12px;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -120,14 +121,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
 }
 
-.NewButton:hover {
-  transform: scale(1.1);
-}
-
-.NewButton__icon {
+.NewReviewButton__icon {
   width: 40px;
   height: 40px;
   object-fit: contain;

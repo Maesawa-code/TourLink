@@ -93,3 +93,23 @@
   color: #0056b3;
   border-bottom-color: #0056b3;
 }
+
+.NewPostButton {
+  position: fixed;
+  bottom: 12%;
+  margin-left: 12px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #5ca5f3;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.NewPostButton__icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
