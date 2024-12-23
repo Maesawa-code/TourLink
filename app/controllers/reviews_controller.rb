@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-
+before_action :set_review, only: [:show, :edit, :update]
   def index
     @reviews = current_user.reviews.order(created_at: :desc)
   end
@@ -19,9 +19,24 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @review = current_user.reviews.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @review.update(review_params)
+      redirect_to user_reviews_path(current_user)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
   private
+
+  def set_review
+    @review = current_user.reviews.find(params[:id])
+  end
+
   def review_params
     params.require(:review).permit(:title, :rating, :comment, :image)
   end

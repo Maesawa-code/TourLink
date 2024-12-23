@@ -42,6 +42,12 @@
     </tbody>
   </table>
 
+  <% if current_user == @review.user %>
+    <div class="reviewShow__actions">
+      <%= link_to "編集する", edit_user_review_path(@review), class: "reviewShow__editButton", data: { turbo: false } %>
+    </div>
+  <% end %>
+
   <!-- 戻るボタン -->
   <div class="reviewShow__backLink">
     <%= link_to "レビュー一覧に戻る", user_reviews_path(current_user), class: "reviewShow__backButton" %>

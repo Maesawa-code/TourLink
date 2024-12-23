@@ -108,3 +108,23 @@
   color: #fff;
   background-color: #007bff;
 }
+
+.reviewShow__editButton{
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  margin-top: 16px; /* 上部に余白を追加 */
+  align-self: flex-end; /* 右端に配置 */
+}
+
+.reviewShow__editButton {
+  background-color: #5ca5f3;
+}
+
+.reviewShow__editButton:hover {
+  transform: scale(1.05);
+}
