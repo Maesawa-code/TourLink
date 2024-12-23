@@ -6,8 +6,8 @@
       
       <!-- 投稿者情報 -->
       <div class="reviewsIndex__authorInfo">
-        <%= image_tag review.user.profile_image.attached? ? rails_blob_url(review.user.profile_image) : "https://via.placeholder.com/40", 
-                      alt: "#{review.user.nickname}のプロフィール画像", class: "reviewsIndex__authorImage" %>
+        <%= image_tag rails_blob_url(review.user.profile_image), 
+              alt: "#{review.user.nickname}のプロフィール画像", class: "reviewsIndex__authorImage" %>
         <span class="reviewsIndex__authorName"><%= review.user.nickname %></span>
       </div>
       <span class="reviewsIndex__date">投稿日: <%= review.created_at.strftime('%Y/%m/%d') %></span>
@@ -25,8 +25,12 @@
       <% end %>
 
       <!-- 詳細リンク -->
-      <%= link_to '詳細を見る', review_path(review), class: 'reviewsIndex__link' %>
+      <%= link_to '詳細を見る', user_review_path(current_user, review), class: 'reviewsIndex__link' %>
     </div>
+  <% end %>
+
+  <%= link_to new_user_review_path(current_user), class: "NewButton", data: { turbo: false } do %>
+  <img src="https://tourlink.s3.ap-northeast-1.amazonaws.com/add.svg" alt="新規投稿" class="NewButton__icon">
   <% end %>
 </div>
 

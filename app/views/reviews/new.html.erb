@@ -1,0 +1,66 @@
+<div class="reviewsNew__container">
+  <div class="reviewsNew__headerText">
+    レビュー投稿
+  </div>
+
+  <%= form_with model: @review, url: user_reviews_path(current_user), local: true, class: "reviewsNew__form" do |f| %>
+    <!-- タイトル -->
+    <div class="reviewsNew__field">
+      <%= f.label :title, class: "reviewsNew__label" do %>
+        タイトル
+        <span class="indispensable">必須</span>
+      <% end %>
+      <%= f.text_field :title, class: "reviewsNew__input", id: "title", placeholder: "例: 素晴らしい体験" %>
+      <% if @review.errors[:title].present? %>
+        <span class="reviewsNew__errorText"><%= @review.errors[:title].first %></span>
+      <% end %>
+    </div>
+
+    <!-- 評価 -->
+    <div class="reviewsNew__field">
+  <label class="reviewsNew__label">評価 (1〜5)<span class="indispensable">必須</span></label>
+  <div class="star-rating">
+    <% (1..5).to_a.reverse.each do |i| %>
+      <input type="radio" id="star<%= i %>" name="review[rating]" value="<%= i %>" <%= 'checked' if i == @review.rating %> />
+      <label for="star<%= i %>">★</label>
+    <% end %>
+  </div>
+  <% if @review.errors[:rating].present? %>
+    <span class="reviewsNew__errorText"><%= @review.errors[:rating].first %></span>
+  <% end %>
+</div>
+
+    <!-- コメント -->
+    <div class="reviewsNew__field">
+      <%= f.label :comment, class: "reviewsNew__label" do %>
+        コメント
+      <% end %>
+      <%= f.text_area :comment, class: "reviewsNew__input", placeholder: "例: 非常に楽しかったです。" %>
+      <% if @review.errors[:comment].present? %>
+        <span class="reviewsNew__errorText"><%= @review.errors[:comment].first %></span>
+      <% end %>
+    </div>
+
+    <!-- 画像アップロード -->
+    <div class="reviewsNew__field">
+      <%= f.label :image, class: "reviewsNew__label" do %>
+        画像
+        <span class="indispensable">必須</span>
+      <% end %>
+      <%= f.file_field :image, class: "reviewsNew__input" %>
+      <% if @review.errors[:image].present? %>
+        <span class="reviewsNew__errorText"><%= @review.errors[:image].first %></span>
+      <% end %>
+    </div>
+
+    <!-- 提出ボタン -->
+    <div class="reviewsNew__actions">
+      <%= f.submit "投稿する", class: "reviewsNew__submitButton" %>
+    </div>
+  <% end %>
+
+  <!-- 戻るボタン -->
+  <div class="reviewsNew__actions">
+    <%= link_to "戻る", user_reviews_path(current_user), class: "reviewsNew__backButton" %>
+  </div>
+</div>

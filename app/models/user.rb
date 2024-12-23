@@ -4,6 +4,7 @@ class User < ApplicationRecord
   belongs_to :age_group
   has_one_attached :profile_image
   has_many :comments
+  has_many :reviews
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
