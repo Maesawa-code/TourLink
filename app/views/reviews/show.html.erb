@@ -1,0 +1,51 @@
+<%= render "shared/header" %>
+
+<div class="reviewShow__container">
+  <!-- 投稿者情報 -->
+  <div class="reviewShow__authorInfo">
+    <%= image_tag @review.user.profile_image.variant(resize_to_fill: [48, 48]), class: "reviewShow__authorImage" %>
+    <span class="reviewShow__authorName"><%= @review.user.nickname %></span>
+  </div>
+
+  <!-- レビュー詳細 -->
+<div class="reviewShow__details">
+  <table class="reviewShow__table">
+    <tbody>
+      <tr>
+        <th class="reviewShow__label">タイトル</th>
+        <td class="reviewShow__value"><%= @review.title %></td>
+      </tr>
+      <tr>
+        <th class="reviewShow__label">評価</th>
+        <td class="reviewShow__value reviewShow__rating">
+          <% 5.times do |i| %>
+            <% if i < @review.rating %>
+            <span class="reviewShow__star">&#9733;</span>
+            <% else %>
+            <span class="reviewShow__star">&#9734;</span>
+            <% end %>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th class="reviewShow__label">コメント</th>
+        <td class="reviewShow__value reviewShow__value--note">
+          <%= @review.comment.presence || 'コメントはありません' %>
+        </td>
+      </tr>
+      <tr>
+        <th class="reviewShow__label">画像</th>
+        <td class="reviewShow__value">
+          <%= image_tag @review.image, class: "reviewShow__imageContent" %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 戻るボタン -->
+  <div class="reviewShow__backLink">
+    <%= link_to "レビュー一覧に戻る", user_reviews_path(current_user), class: "reviewShow__backButton" %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
