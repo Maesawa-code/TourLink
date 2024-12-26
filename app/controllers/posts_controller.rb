@@ -3,12 +3,7 @@ class PostsController < ApplicationController
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
-    if user_signed_in?
       @posts = Post.all.order(created_at: :desc)
-      render :index
-    else
-      redirect_to top_screen_index_path
-    end
   end
 
   def new
@@ -19,7 +14,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
     if @post.save
-      redirect_to posts_path, notice: '投稿が作成されました。' # 投稿一覧へリダイレクト
+      redirect_to posts_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -41,9 +36,9 @@ class PostsController < ApplicationController
 
   def destroy
     if @post.destroy
-      redirect_to root_path, notice: "投稿を削除しました。"
+      redirect_to root_path
     else
-      redirect_to post_path(@post), alert: "投稿の削除に失敗しました。"
+      redirect_to post_path(@post)
     end
   end
 
