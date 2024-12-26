@@ -45,6 +45,7 @@
   <% if current_user == @review.user %>
     <div class="reviewShow__actions">
       <%= link_to "編集する", edit_user_review_path(@review), class: "reviewShow__editButton", data: { turbo: false } %>
+      <%= link_to "削除する", user_review_path(@review), data: { turbo_method: :delete }, class: "reviewShow__deleteButton" %>
     </div>
   <% end %>
 

@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-before_action :set_review, only: [:show, :edit, :update]
+before_action :set_review, only: [:show, :edit, :update, :destroy]
   def index
     @reviews = current_user.reviews.order(created_at: :desc)
   end
@@ -29,6 +29,14 @@ before_action :set_review, only: [:show, :edit, :update]
       redirect_to user_reviews_path(current_user)
     else
       render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    if @review.destroy
+      redirect_to user_reviews_path(current_user)
+    else
+      render :show
     end
   end
   private
