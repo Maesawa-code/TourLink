@@ -1,0 +1,46 @@
+<%= render 'shared/header' %>
+
+<div class="reviewsIndex__container">
+  <% @reviews.each do |review| %>
+    <div class="reviewsIndex__reviewCard">
+      
+      <!-- 投稿者情報 -->
+      <div class="reviewsIndex__authorInfo">
+        <%= image_tag rails_blob_url(review.user.profile_image), 
+              alt: "#{review.user.nickname}のプロフィール画像", class: "reviewsIndex__authorImage" %>
+
+        <span class="reviewsIndex__authorName"><%= review.user.nickname %></span>
+      </div>
+      <span class="reviewsIndex__date">投稿日: <%= review.created_at.strftime('%Y/%m/%d') %></span>
+      
+      <!-- レビュー詳細情報 -->
+      <h2 class="reviewsIndex__title"><%= review.title %></h2>
+      <div class="reviewIndex__value reviewIndex__rating">
+          <% 5.times do |i| %>
+            <% if i < review.rating %>
+            <span class="reviewIndex__star">&#9733;</span>
+            <% else %>
+            <span class="reviewIndex__star">&#9734;</span>
+            <% end %>
+          <% end %>
+        </div>
+      <% if review.comment.present? %>
+        <p class="reviewsIndex__content"><strong>コメント:</strong> <%= review.comment %></p>
+      <% end %>
+      <% if review.image.attached? %>
+        <div class="reviewsIndex__image">
+          <%= image_tag review.image, alt: 'レビュー画像', class: 'reviewsIndex__reviewImage' %>
+        </div>
+      <% end %>
+
+      <!-- 詳細リンク -->
+      <%= link_to '詳細を見る', user_review_path(current_user, review), class: 'reviewsIndex__link' %>
+    </div>
+  <% end %>
+
+  <%= link_to new_user_review_path(current_user), class: "NewReviewButton", data: { turbo: false } do %>
+  <img src="https://tourlink.s3.ap-northeast-1.amazonaws.com/add.svg" alt="新規投稿" class="NewReviewButton__icon">
+  <% end %>
+</div>
+
+<%= render 'shared/footer' %>

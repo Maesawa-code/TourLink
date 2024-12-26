@@ -40,14 +40,12 @@
     </table>
   </div>
 
-  <% if user_signed_in? %>
     <% if current_user == @post.user %>
       <div class="postShow__actions">
         <%= link_to "編集する", edit_post_path(@post), class: "postShow__editButton", data: { turbo: false } %>
         <%= link_to "削除する", post_path(@post), data: { turbo_method: :delete }, class: "postShow__deleteButton" %>
       </div>
     <% end %>
-  <% end %>
 
   <div class="postShow__comments">
   <h2 class="postShow__sectionTitle">コメント一覧</h2>
@@ -56,11 +54,7 @@
       <% if comment.persisted? %>
         <div class="postShow__comment">
           <p>
-            <% if comment.user.profile_image.attached? %>
-              <%= image_tag comment.user.profile_image.variant(resize_to_fill: [32, 32]), class: "postShow__commentImage" %>
-            <% else %>
-              <%= image_tag "default-profile.png", class: "postShow__commentImage" %>
-            <% end %>
+            <%= image_tag comment.user.profile_image.variant(resize_to_fill: [32, 32]), class: "postShow__commentImage" %> 
             <strong><%= comment.user.nickname %></strong>: <%= comment.content %>
           </p>
         </div>

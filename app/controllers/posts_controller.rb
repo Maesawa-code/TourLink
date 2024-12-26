@@ -18,6 +18,11 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
+    if @post.save
+      redirect_to posts_path, notice: '投稿が作成されました。' # 投稿一覧へリダイレクト
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show; 

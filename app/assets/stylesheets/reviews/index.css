@@ -1,18 +1,17 @@
-.postsIndex__container {
+.reviewsIndex__container {
   position: fixed;
   width: 100%;
   max-width: 800px;
   top: 10vh;
   bottom: 10vh;
-  background-color: #d2c7b8;
+  background-color: #d2c7b8;;
   color: #223148;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-
 }
 
-.postsIndex__postCard {
+.reviewsIndex__reviewCard {
   margin: 16px;
   padding: 16px;
   background-color: #ffffff;
@@ -22,28 +21,19 @@
   transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
-.postsIndex__postCard:hover {
+.reviewsIndex__reviewCard:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   transform: translateY(-4px);
 }
 
-.postsIndex__postHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 16px;
-  border-bottom: 1px solid #d2c7b8;
-  background-color: #f9f9f9;
-}
-
-.postsIndex__authorInfo {
+.reviewsIndex__authorInfo {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 16px;
 }
 
-.postsIndex__authorImage {
+.reviewsIndex__authorImage {
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -51,27 +41,33 @@
   border: 2px solid #d2c7b8;
 }
 
-.postsIndex__authorName {
+.reviewsIndex__authorName {
   font-weight: bold;
   font-size: 16px;
   color: #333;
 }
 
-.postsIndex__date {
+.reviewsIndex__date {
   font-size: 14px;
   color: #666;
   margin-left: auto;
   text-align: right;
 }
 
-.postsIndex__title {
+.reviewsIndex__title {
   font-size: 20px;
   font-weight: bold;
   color: #223148;
   margin: 16px 0 8px;
 }
 
-.postsIndex__content {
+.reviewsIndex__field {
+  font-size: 14px;
+  color: #555;
+  margin: 8px 0;
+}
+
+.reviewsIndex__content {
   font-size: 14px;
   color: #555;
   margin: 0 0 16px;
@@ -79,7 +75,26 @@
   word-break: break-all;
 }
 
-.postsIndex__link {
+.reviewIndex__rating {
+  gap: 4px;
+  font-size: 24px;
+  color: gold;
+}
+
+.reviewIndex__star {
+  display: inline-block;
+}
+
+.reviewsIndex__reviewImage {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  margin-top: 16px;
+  border-radius: 8px;
+  border: 1px solid #d2c7b8;
+}
+
+.reviewsIndex__link {
   display: inline-block;
   color: #007bff;
   text-decoration: none;
@@ -88,13 +103,13 @@
   transition: border-color 0.3s ease, color 0.3s ease;
 }
 
-.postsIndexlink:hover {
+.reviewsIndex__link:hover {
   text-decoration: none;
   color: #0056b3;
   border-bottom-color: #0056b3;
 }
 
-.NewPostButton {
+.NewReviewButton {
   position: fixed;
   bottom: 12%;
   margin-left: 12px;
@@ -108,7 +123,7 @@
   justify-content: center;
 }
 
-.NewPostButton__icon {
+.NewReviewButton__icon {
   width: 40px;
   height: 40px;
   object-fit: contain;

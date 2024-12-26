@@ -1,0 +1,139 @@
+.reviewShow__container {
+  position: fixed;
+  width: 100%;
+  max-width: 800px;
+  top: 10vh;
+  bottom: 10vh;
+  background-color: #f7f1e5;
+  color: #223148;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  align-items: center;
+  padding: 32px 0;
+}
+
+.reviewShow__authorInfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.reviewShow__authorImage {
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #223148;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+}
+
+.reviewShow__authorName {
+  font-size: 16px;
+  font-weight: bold;
+  color: #223148;
+}
+
+.reviewShow__details {
+  background-color: #ffffff;
+  border: 1px solid #d2c7b8;
+  padding: 32px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 80%;
+}
+
+.reviewShow__table {
+  width: 100%;
+}
+
+.reviewShow__label {
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #d2c7b8;
+}
+
+.reviewShow__value {
+  text-align: left;
+  color: #555;
+  padding: 8px;
+  border: 1px solid #d2c7b8;
+}
+
+.reviewShow__value--note {
+  color: #666;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+
+.reviewShow__imageContent {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reviewShow__rating {
+  display: flex;
+  justify-content: flex-start;
+  gap: 4px;
+  font-size: 24px;
+  color: gold;
+}
+
+.reviewShow__star {
+  display: inline-block;
+}
+
+.reviewShow__backLink {
+  margin-top: 16px;
+}
+
+.reviewShow__backButton {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.reviewShow__backButton:hover {
+  color: #fff;
+  background-color: #007bff;
+}
+
+.reviewShow__editButton,
+.reviewShow__deleteButton {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  margin-top: 16px;
+  align-self: flex-end;
+}
+
+.reviewShow__editButton {
+  background-color: #5ca5f3;
+}
+
+.reviewShow__editButton:hover {
+  transform: scale(1.05);
+}
+
+.reviewShow__deleteButton {
+  background-color: #dc3545;
+}
+
+.reviewShow__deleteButton:hover {
+  transform: scale(1.05);
+}
