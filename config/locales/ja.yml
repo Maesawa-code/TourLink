@@ -49,6 +49,17 @@ ja:
               required: "ユーザーが紐付いていません"
             post:
               required: "投稿が紐付いていません"
+        review:
+          attributes:
+            title:
+              blank: "タイトルを入力してください"
+              too_long: "タイトルは100字以内で入力してください"
+            rating:
+              blank: "評価を選択してください"
+            comment:
+              too_long: "コメントは100字以内で入力してください"
+            image:
+              blank: "画像を選択してください"
               
   errors:
     messages:
