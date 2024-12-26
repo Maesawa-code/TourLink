@@ -33,7 +33,7 @@ RSpec.describe Post, type: :model do
       it '予定日が過去の日付では投稿できない' do
         @post.scheduled_date = Date.yesterday
         @post.valid?
-        expect(@post.errors.full_messages).to include("Scheduled date は今日以降の日付を選択してください")
+        expect(@post.errors.full_messages).to include("Scheduled date 予定日は今日以降の日付を選択してください")
       end
 
       it 'バイクジャンルが未選択では投稿できない' do

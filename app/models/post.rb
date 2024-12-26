@@ -18,7 +18,7 @@ class Post < ApplicationRecord
 
   def scheduled_date_cannot_be_in_the_past
     if scheduled_date.present? && scheduled_date < Date.today
-      errors.add(:scheduled_date, "は今日以降の日付を選択してください")
+      errors.add(:scheduled_date, "予定日は今日以降の日付を選択してください")
     end
   end
 end
