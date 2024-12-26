@@ -11,7 +11,7 @@ before_action :set_review, only: [:show, :edit, :update, :destroy]
   def create
     @review = current_user.reviews.build(review_params)
     if @review.save
-      redirect_to user_reviews_path(current_user), notice: 'レビューが投稿されました。'
+      redirect_to user_reviews_path(current_user)
     else
       puts @review.errors.full_messages
       render :new, status: :unprocessable_entity
