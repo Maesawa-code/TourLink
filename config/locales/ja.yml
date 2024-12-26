@@ -55,7 +55,7 @@ ja:
               blank: "タイトルを入力してください"
               too_long: "タイトルは100字以内で入力してください"
             rating:
-              blank: "評価を選択してください"
+              not_a_number: "評価を選択してください"
             comment:
               too_long: "コメントは100字以内で入力してください"
             image:
