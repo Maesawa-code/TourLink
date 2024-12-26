@@ -109,7 +109,8 @@
   background-color: #007bff;
 }
 
-.reviewShow__editButton{
+.reviewShow__editButton,
+.reviewShow__deleteButton {
   padding: 8px 16px;
   font-size: 14px;
   color: #fff;
@@ -117,8 +118,8 @@
   border-radius: 4px;
   text-decoration: none;
   transition: transform 0.2s ease;
-  margin-top: 16px; /* 上部に余白を追加 */
-  align-self: flex-end; /* 右端に配置 */
+  margin-top: 16px;
+  align-self: flex-end;
 }
 
 .reviewShow__editButton {
@@ -126,5 +127,13 @@
 }
 
 .reviewShow__editButton:hover {
+  transform: scale(1.05);
+}
+
+.reviewShow__deleteButton {
+  background-color: #dc3545;
+}
+
+.reviewShow__deleteButton:hover {
   transform: scale(1.05);
 }
