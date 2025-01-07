@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
+
   root to: 'posts#index'
 
   resources :top_screen, only: [:index]
@@ -8,7 +12,4 @@ Rails.application.routes.draw do
   resources :users do
     resources :reviews
   end
-  devise_for :users, controllers: {
-    registrations: 'users/registrations'
-  }
 end
