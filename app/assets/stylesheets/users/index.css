@@ -21,7 +21,6 @@
   width: 100%;
   text-align: center;
   margin: 10%;
-
 }
 
 .usersIndex__profileImageWrapper {
@@ -61,6 +60,9 @@
 
 .usersIndex__editLink {
   margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
 }
 
 .usersIndex__editButton {
@@ -77,5 +79,22 @@
 
 .usersIndex__editButton:hover {
   background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.usersIndex__logoutButton {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #dc3545;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.usersIndex__logoutButton:hover {
+  background-color: #c82333;
   transform: translateY(-2px);
 }
