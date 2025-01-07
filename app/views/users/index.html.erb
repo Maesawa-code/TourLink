@@ -21,6 +21,7 @@
     </div>
     <div class="usersIndex__editLink">
       <%= link_to 'プロフィールを編集する', edit_user_path(@user), class: "usersIndex__editButton" %>
+      <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: "usersIndex__logoutButton" %>
     </div>
   </div>
 </div>
