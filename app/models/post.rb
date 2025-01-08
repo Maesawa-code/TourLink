@@ -6,6 +6,7 @@ class Post < ApplicationRecord
 
   belongs_to :user
   has_many :comments, dependent: :destroy
+  has_many :requests
 
   validates :title, presence: true
   validates :scheduled_date, presence: true
