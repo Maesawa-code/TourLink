@@ -38,6 +38,15 @@
 
       </tbody>
     </table>
+    <% unless @post.user == current_user %>
+      <%= button_to '参加リクエストを送る', post_requests_path(@post), method: :post, class: 'request-btn' %>
+      <% if flash[:notice] %>
+        <div class="flash-notice">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+    <% end %>
+
   </div>
 
     <% if current_user == @post.user %>

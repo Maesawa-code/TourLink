@@ -197,3 +197,24 @@
   margin-right: 8px;
   vertical-align: middle;
 }
+
+.request-btn {
+  display: inline-block;
+  background-color: #ff5722;
+  color: #ffffff;
+  margin-top: 16px;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.request-btn:hover {
+  background-color: #e64a19;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
