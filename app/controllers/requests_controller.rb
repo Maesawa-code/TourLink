@@ -22,4 +22,10 @@ class RequestsController < ApplicationController
     @request.update(status: 'rejected')
     redirect_to post_path(@request.post), notice: 'リクエストを拒否しました。'
   end
+
+  private
+
+  def create_notification(user, message)
+    Notification.create(user: user, message: message)
+  end
 end
