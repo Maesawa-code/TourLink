@@ -218,3 +218,51 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
 }
+
+.request {
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px; 
+}
+
+.request .btn {
+  margin-right: 0;
+}
+
+.request p {
+  margin: 0;
+}
+
+.btn-approve {
+  background-color: #5ca5f3;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-approve:hover {
+  background-color: #4a8ad0;
+  transform: scale(1.05);
+}
+
+.btn-reject {
+  background-color: #dc3545;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-reject:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}

@@ -10,4 +10,16 @@ class RequestsController < ApplicationController
       redirect_to post_path(@post)
     end
   end
+
+  def approve
+    @request = Request.find(params[:id])
+    @request.update(status: 'approved')
+    redirect_to post_path(@request.post), notice: 'リクエストを承認しました。'
+  end
+
+  def reject
+    @request = Request.find(params[:id])
+    @request.update(status: 'rejected')
+    redirect_to post_path(@request.post), notice: 'リクエストを拒否しました。'
+  end
 end

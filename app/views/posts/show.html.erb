@@ -47,6 +47,22 @@
       <% end %>
     <% end %>
 
+    <% if @post.user == current_user %>
+  <h3>参加リクエスト</h3>
+  <% @post.requests.each do |request| %>
+      <p><%= request.user.nickname %>さんが参加を希望しています。</p>
+          <div class="request">
+      <% if request.status == 'pending' %>
+        <%= button_to '承認する', approve_request_path(@post, request), method: :patch, class: 'btn-approve' %>
+        <%= button_to '拒否する', reject_request_path(@post, request), method: :patch, class: 'btn-reject' %>
+      <% else %>
+        <p>ステータス: <%= request.status.capitalize %></p>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+
+
   </div>
 
     <% if current_user == @post.user %>
