@@ -1,0 +1,71 @@
+.notificationsIndex__container {
+  position: fixed;
+  width: 100%;
+  max-width: 800px;
+  top: 10vh;
+  bottom: 10vh;
+  background-color: #d2c7b8; /* 背景色 */
+  color: #223148; /* テキスト色 */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.notificationsIndex__notificationCard {
+  margin-bottom: 16px;
+  padding: 16px;
+  margin: 16px;
+  background-color: #ffffff; /* カード背景色 */
+  border: 1px solid #d2c7b8; /* カードの枠線色 */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* カードの影 */
+}
+
+.notificationsIndex__notificationCard.unread {
+  border: 2px solid #5ca5f3; /* 未読通知の強調 */
+  background-color: #eef6ff; /* 未読通知の背景色 */
+}
+
+.notificationsIndex__postInfo {
+  margin-bottom: 16px;
+}
+
+.notificationsIndex__title {
+  font-size: 18px; /* タイトルのフォントサイズ */
+  font-weight: bold;
+  color: #223148; /* タイトルの色 */
+  margin-bottom: 8px;
+}
+
+.notificationsIndex__field {
+  font-size: 14px; /* 投稿情報のフォントサイズ */
+  color: #555; /* テキスト色 */
+  margin: 4px 0;
+}
+
+.notificationsIndex__info {
+  display: flex;
+  flex-direction: column; /* 縦に配置 */
+  gap: 8px; /* 要素間の隙間 */
+}
+
+.notificationsIndex__message {
+  font-size: 16px; /* メッセージのフォントサイズ */
+  font-weight: bold; /* メッセージを強調 */
+  color: #333; /* メッセージの色 */
+  margin: 0;
+}
+
+.notificationsIndex__date {
+  font-size: 12px; /* 日付のフォントサイズ */
+  color: #666; /* 日付の色 */
+  text-align: right; /* 日付を右寄せ */
+  margin-top: 8px;
+}
+
+.notificationsIndex__empty {
+  font-size: 16px; /* 空の通知メッセージのフォントサイズ */
+  color: #555; /* メッセージの色 */
+  text-align: center;
+  margin-top: 20px;
+}

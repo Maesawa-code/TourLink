@@ -7,7 +7,8 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :posts
   has_many :notifications
-  
+  has_many :requests
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
