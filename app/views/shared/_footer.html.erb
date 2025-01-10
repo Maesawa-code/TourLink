@@ -3,8 +3,8 @@
     <%= link_to root_path, class: "nav-link" do %>
       <img src="https://tourlink.s3.ap-northeast-1.amazonaws.com/home.svg" alt="Home" class="nav-icon">
     <% end %>
-    <%= link_to "#", class: "nav-link" do %>
-      <img src="https://tourlink.s3.ap-northeast-1.amazonaws.com/chat.svg" alt="Chat" class="nav-icon">
+    <%= link_to notifications_path, class: "nav-link" do %>
+      <img src="https://tourlink.s3.ap-northeast-1.amazonaws.com/notification.svg" alt="Chat" class="nav-icon">
     <% end %>
     <%= link_to user_reviews_path(current_user), class: "nav-link" do %>
       <img src="https://tourlink.s3.ap-northeast-1.amazonaws.com/review.svg" alt="Review" class="nav-icon">

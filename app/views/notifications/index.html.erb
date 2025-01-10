@@ -1,0 +1,29 @@
+<%= render 'shared/header' %>
+
+<div class="notificationsIndex__container">
+  <% @notifications.each do |notification| %>
+    <% post = notification.post %> <!-- 通知に関連する投稿を取得 -->
+    <div class="notificationsIndex__notificationCard <%= 'unread' unless notification.read_status %>">
+      
+      <!-- 投稿情報 -->
+      <div class="notificationsIndex__postInfo">
+        <h2 class="notificationsIndex__title"><%= post.title %></h2>
+        <p class="notificationsIndex__field"><strong>予定日:</strong> <%= post.scheduled_date.present? ? post.scheduled_date.strftime('%Y/%m/%d') : "未定" %></p>
+        <p class="notificationsIndex__field"><strong>都道府県:</strong> <%= post.prefecture.name %></p>
+      </div>
+
+      <!-- 通知情報 -->
+      <div class="notificationsIndex__info">
+        <h3 class="notificationsIndex__subheading">主催者からのメッセージ</h3>
+        <p class="notificationsIndex__message"><%= notification.message.presence || "メッセージはありません" %></p>
+        <span class="notificationsIndex__date"><%= notification.created_at.strftime('%Y/%m/%d %H:%M') %></span>
+      </div>
+    </div>
+  <% end %>
+
+  <% if @notifications.empty? %>
+    <p class="notificationsIndex__empty">現在通知はありません。</p>
+  <% end %>
+</div>
+
+<%= render 'shared/footer' %>

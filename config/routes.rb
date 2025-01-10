@@ -8,8 +8,17 @@ Rails.application.routes.draw do
   resources :top_screen, only: [:index]
   resources :posts do
     resources :comments, only: :create
-  end  
+    resources :requests, only: [:create] do
+      member do
+        patch :approve
+        patch :reject
+      end
+    end
+  end
+
   resources :users do
     resources :reviews
   end
+
+  resources :notifications, only: :index
 end
