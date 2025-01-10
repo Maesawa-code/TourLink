@@ -15,7 +15,7 @@
       <!-- 通知情報 -->
       <div class="notificationsIndex__info">
         <h3 class="notificationsIndex__subheading">主催者からのメッセージ</h3>
-        <p class="notificationsIndex__message"><%= notification.message %></p>
+        <p class="notificationsIndex__message"><%= notification.message.presence || "メッセージはありません" %></p>
         <span class="notificationsIndex__date"><%= notification.created_at.strftime('%Y/%m/%d %H:%M') %></span>
       </div>
     </div>
