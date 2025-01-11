@@ -36,6 +36,8 @@ class PostsController < ApplicationController
 
   def destroy
     @post.comments.destroy_all
+    @post.requests.destroy_all
+    @post.notifications.destroy_all
     if @post.destroy
       redirect_to root_path
     else
