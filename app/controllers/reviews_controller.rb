@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
-before_action :set_review, only: [:show, :edit, :update, :destroy]
+before_action :set_review, only: [:edit, :update, :destroy]
   def index
-    @reviews = current_user.reviews.order(created_at: :desc)
+    @reviews = Review.all.order(created_at: :desc)
   end
 
   def new
@@ -19,6 +19,7 @@ before_action :set_review, only: [:show, :edit, :update, :destroy]
   end
 
   def show
+    @review = Review.find(params[:id])
   end
 
   def edit
