@@ -68,7 +68,6 @@
     </div>
 
     <!-- メモ -->
-    <%= javascript_include_tag 'posts_form', 'data-turbo-track': 'reload' %>
     <div class="postsNew__field">
       <%= f.label :note, "メモ", class: "postsNew__label" %>
       <%= f.text_area :note, class: "postsNew__input", id: "note", placeholder: "例: 夜景を楽しむため、20時に集合予定です。" %>

@@ -105,7 +105,6 @@
 
   <div class="postShow__commentForm">
     
-    <%= javascript_include_tag 'posts_form', 'data-turbo-track': 'reload' %>
     <%= form_with model: [@post, @comment], local: true do |f| %>
         <%= f.label :content, 'コメント内容', class: "postShow__formLabel" %>
         <%= f.text_area :content, class: "postShow__formControl" %>

@@ -32,7 +32,6 @@
       {}, { class: "postsNew__input postsNew__selectBox" } %>
     </div>
 
-    <%= javascript_include_tag 'posts_form', 'data-turbo-track': 'reload' %>
     <div class="postEdit__formGroup">
       <%= f.label :note, "メモ", class: "postEdit__label" %>
       <%= f.text_area :note, class: "postEdit__textarea", id: "note" %>
